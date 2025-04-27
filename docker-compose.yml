@@ -34,3 +34,14 @@ services:
       - default
     volumes:
       - ./pgdata:/var/lib/postgresql/data/
+    
+  nginx-vynils:
+    image: nginx:stable-alpine
+    container_name: nginx-vynils
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - default
